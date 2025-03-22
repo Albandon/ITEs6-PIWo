@@ -1,61 +1,218 @@
-<html>
+<html lang="pl">
     <head>
         <title>LiBeer</title>
+        <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
         <header>
             <div class="top">
-                <a href ="">Zaloguj się</a>
-                <a href ="">Zarejestruj się</a>
-                <a href ="">Koszyk</a>
+                <div class="top-login">
+                    <a class="top-text" href ="">Zaloguj się</a>
+                </div>
+                <div class="logo">
+                    <img src="logo.png" class="logo-image">
+                </div>
+                <div class="top-register">
+                    <a class="top-text" href ="">Zarejestruj się</a>
+                </div>
+                <div class="cart">
+                    <button onclick="" aria-label="label-cart">Koszyk</button>
+                </div>
             </div>
         </header>
         <main>
-
+            <div class="search-bar">
+                <input type="search" placeholder="Szukasz jakiegoś tytułu?">
+            </div>
+            <div class="main-container">
+                <div class="filters-bar">
+                    <h2 class="filters-header">Filtry</h2>
+                    <div class="filters-bar-filters">
+                        <div>
+                            <label for="filter-price" class="filters">Cena</label>
+                            <input id="filter-price" class="filters-value" type="number" min="0">
+                        </div>
+                        <div>
+                            <label for="filter-cover" class="filters"> Okładka</label>
+                            <select id= "filter-cover" class="filters-value">
+                                <option value=""></option>
+                                <option value="0">Miękka</option>
+                                <option value="1">Twarda</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="filter-page-count" class="filters">Ilość stron</label>
+                            <input id="filter-page-count" class="filters-value" type="number" min="1">
+                        </div>
+                        <div>
+                            <label for="filter-page-Author" class="filters">Autor</label>
+                            <input id="filter-page-Author" class="filters-value" type="search">
+                        </div>
+                        <div>
+                            <label for="filter-page-desc" class="filters">Zawarty w opisie</label>
+                            <input id="filter-page-desc" class="filters-value" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="book-list-container">
+                    <div class="book-item">
+                        <div class="book-cover-image">
+                            <img src="Wiedźmin.jpg">
+                        </div>
+                        <div class="book-information-main">
+                            <h3 class="book-title">Osatnie życzenie. Wiedźmin. Tom 1</h3>
+                            <p class="book-author">Autor: Andrzej Sapkowski</p>
+                            <p class="book-description">Wiedźmin to mistrz miecza i fachowiec czarostwa strzegący moralnej i biologicznej równowagi w cudownym świecie fantasy. Z woli Sapkowskiego w ów świat pełen potworów i bujnych charakterów, skomplikowanych intryg i eksplodujących namiętności wnosi Geralt nasze problemy, mitologie i nowoczesny punkt widzenia.</p>
+                        </div>
+                        <div class="book-information-side">
+                            <div class="book-information-money">
+                                <div class="book-price">33</div>
+                                <div class="book-currency">zł</div>
+                            </div>
+                            <div class="book-page-number">246 stron</div>     
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-cover-image">
+                            <img src="Wiedźmin.jpg">
+                        </div>
+                        <div class="book-information-main">
+                            <h3 class="book-title">Osatnie życzenie. Wiedźmin. Tom 1</h3>
+                            <p class="book-author">Autor: Andrzej Sapkowski</p>
+                            <p class="book-description">Wiedźmin to mistrz miecza i fachowiec czarostwa strzegący moralnej i biologicznej równowagi w cudownym świecie fantasy. Z woli Sapkowskiego w ów świat pełen potworów i bujnych charakterów, skomplikowanych intryg i eksplodujących namiętności wnosi Geralt nasze problemy, mitologie i nowoczesny punkt widzenia.</p>
+                        </div>
+                        <div class="book-information-side">
+                            <div class="book-information-money">
+                                <div class="book-price">33</div>
+                                <div class="book-currency">zł</div>
+                            </div>
+                            <div class="book-page-number">246 stron</div>     
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-cover-image">
+                            <img src="Wiedźmin.jpg">
+                        </div>
+                        <div class="book-information-main">
+                            <h3 class="book-title">Osatnie życzenie. Wiedźmin. Tom 1</h3>
+                            <p class="book-author">Autor: Andrzej Sapkowski</p>
+                            <p class="book-description">Wiedźmin to mistrz miecza i fachowiec czarostwa strzegący moralnej i biologicznej równowagi w cudownym świecie fantasy. Z woli Sapkowskiego w ów świat pełen potworów i bujnych charakterów, skomplikowanych intryg i eksplodujących namiętności wnosi Geralt nasze problemy, mitologie i nowoczesny punkt widzenia.</p>
+                        </div>
+                        <div class="book-information-side">
+                            <div class="book-information-money">
+                                <div class="book-price">33</div>
+                                <div class="book-currency">zł</div>
+                            </div>
+                            <div class="book-page-number">246 stron</div>     
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-cover-image">
+                            <img src="Wiedźmin.jpg">
+                        </div>
+                        <div class="book-information-main">
+                            <h3 class="book-title">Osatnie życzenie. Wiedźmin. Tom 1</h3>
+                            <p class="book-author">Autor: Andrzej Sapkowski</p>
+                            <p class="book-description">Wiedźmin to mistrz miecza i fachowiec czarostwa strzegący moralnej i biologicznej równowagi w cudownym świecie fantasy. Z woli Sapkowskiego w ów świat pełen potworów i bujnych charakterów, skomplikowanych intryg i eksplodujących namiętności wnosi Geralt nasze problemy, mitologie i nowoczesny punkt widzenia.</p>
+                        </div>
+                        <div class="book-information-side">
+                            <div class="book-information-money">
+                                <div class="book-price">33</div>
+                                <div class="book-currency">zł</div>
+                            </div>
+                            <div class="book-page-number">246 stron</div>     
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-cover-image">
+                            <img src="Wiedźmin.jpg">
+                        </div>
+                        <div class="book-information-main">
+                            <h3 class="book-title">Osatnie życzenie. Wiedźmin. Tom 1</h3>
+                            <p class="book-author">Autor: Andrzej Sapkowski</p>
+                            <p class="book-description">Wiedźmin to mistrz miecza i fachowiec czarostwa strzegący moralnej i biologicznej równowagi w cudownym świecie fantasy. Z woli Sapkowskiego w ów świat pełen potworów i bujnych charakterów, skomplikowanych intryg i eksplodujących namiętności wnosi Geralt nasze problemy, mitologie i nowoczesny punkt widzenia.</p>
+                        </div>
+                        <div class="book-information-side">
+                            <div class="book-information-money">
+                                <div class="book-price">33</div>
+                                <div class="book-currency">zł</div>
+                            </div>
+                            <div class="book-page-number">246 stron</div>     
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-cover-image">
+                            <img src="Wiedźmin.jpg">
+                        </div>
+                        <div class="book-information-main">
+                            <h3 class="book-title">Osatnie życzenie. Wiedźmin. Tom 1</h3>
+                            <p class="book-author">Autor: Andrzej Sapkowski</p>
+                            <p class="book-description">Wiedźmin to mistrz miecza i fachowiec czarostwa strzegący moralnej i biologicznej równowagi w cudownym świecie fantasy. Z woli Sapkowskiego w ów świat pełen potworów i bujnych charakterów, skomplikowanych intryg i eksplodujących namiętności wnosi Geralt nasze problemy, mitologie i nowoczesny punkt widzenia.</p>
+                        </div>
+                        <div class="book-information-side">
+                            <div class="book-information-money">
+                                <div class="book-price">33</div>
+                                <div class="book-currency">zł</div>
+                            </div>
+                            <div class="book-page-number">246 stron</div>     
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-cover-image">
+                            <img src="Wiedźmin.jpg">
+                        </div>
+                        <div class="book-information-main">
+                            <h3 class="book-title">Osatnie życzenie. Wiedźmin. Tom 1</h3>
+                            <p class="book-author">Autor: Andrzej Sapkowski</p>
+                            <p class="book-description">Wiedźmin to mistrz miecza i fachowiec czarostwa strzegący moralnej i biologicznej równowagi w cudownym świecie fantasy. Z woli Sapkowskiego w ów świat pełen potworów i bujnych charakterów, skomplikowanych intryg i eksplodujących namiętności wnosi Geralt nasze problemy, mitologie i nowoczesny punkt widzenia.</p>
+                        </div>
+                        <div class="book-information-side">
+                            <div class="book-information-money">
+                                <div class="book-price">33</div>
+                                <div class="book-currency">zł</div>
+                            </div>
+                            <div class="book-page-number">246 stron</div>     
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-cover-image">
+                            <img src="Wiedźmin.jpg">
+                        </div>
+                        <div class="book-information-main">
+                            <h3 class="book-title">Osatnie życzenie. Wiedźmin. Tom 1</h3>
+                            <p class="book-author">Autor: Andrzej Sapkowski</p>
+                            <p class="book-description">Wiedźmin to mistrz miecza i fachowiec czarostwa strzegący moralnej i biologicznej równowagi w cudownym świecie fantasy. Z woli Sapkowskiego w ów świat pełen potworów i bujnych charakterów, skomplikowanych intryg i eksplodujących namiętności wnosi Geralt nasze problemy, mitologie i nowoczesny punkt widzenia.</p>
+                        </div>
+                        <div class="book-information-side">
+                            <div class="book-information-money">
+                                <div class="book-price">33</div>
+                                <div class="book-currency">zł</div>
+                            </div>
+                            <div class="book-page-number">246 stron</div>     
+                        </div>
+                    </div>
+                    <div class="book-item">
+                        <div class="book-cover-image">
+                            <img src="Wiedźmin.jpg">
+                        </div>
+                        <div class="book-information-main">
+                            <h3 class="book-title">Osatnie życzenie. Wiedźmin. Tom 1</h3>
+                            <p class="book-author">Autor: Andrzej Sapkowski</p>
+                            <p class="book-description">Wiedźmin to mistrz miecza i fachowiec czarostwa strzegący moralnej i biologicznej równowagi w cudownym świecie fantasy. Z woli Sapkowskiego w ów świat pełen potworów i bujnych charakterów, skomplikowanych intryg i eksplodujących namiętności wnosi Geralt nasze problemy, mitologie i nowoczesny punkt widzenia.</p>
+                        </div>
+                        <div class="book-information-side">
+                            <div class="book-information-money">
+                                <div class="book-price">33</div>
+                                <div class="book-currency">zł</div>
+                            </div>
+                            <div class="book-page-number">246 stron</div>     
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
-        <section class="main-filter-container">
-            <div class="filters_bar">
-                <div class="filters_bar_filter" >
-                    <label for="filter_price" class="filters">Cena</label>
-                    <input id="filter_price" type="number" min="0">
-                </div>
-                <div class="filters_bar_filter">
-                    <label for="filter_cover" class="filters"> Okładka</label>
-                    <select id= "filter_cover">
-                        <option selected="selected" value="0">Miękka</option>
-                        <option value="1">Twarda</option>
-                    </select>
-                </div>
-                <div class="filters_bar_filter" >
-                    <label for="filter_page_count" class="filters">Ilość stron</label>
-                    <input id="filter_page_count" type="number" min="1">
-                </div>
-                <div class="filters_bar_filter" >
-                    <label for="filter_page_Author" class="filters">Autor</label>
-                    <input id="filter_page_Author" type="search">
-                </div>
-                <div class="filters_bar_filter" >
-                    <label for="filter_page_desc" class="filters">Zawarty w opisie</label>
-                    <input id="filter_page_desc" type="text">
-                </div>
-            </div>
-        </section>
-        <section class="main-announcements-container">
-            <div class="main-announcements-text">
-                <h1 class="main-title">OGŁOSZENIA</h1>
-            </div>
-            <div class="main-announcments-announcment">
-                <div class="announcment-text-up">
-                    <h1 class="announcment-title">Biały Kruk</h1>
-                    <h1 class="announcment-description">bla bla bla</h1>
-                </div>
-                <div class="announcement-text-side">
-                    <span class="announcment-book-cost">21</span>
-                    <span class="announcment-book-currency">zł</span>
-                </div>
-            </div>
-
-        </section>
-        <footer>test</footer>
+        <footer class="footer">
+            <p class="footer-copyright">2025 LiBeer</p>
+        </footer>
     </body>
 </html>
