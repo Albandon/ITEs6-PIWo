@@ -1,6 +1,5 @@
 "use strict";
 
-const list = ["Zrobić dodawanie do TODO"];
 const Todo_list = {
     "PILNE":["Zrobić dodawanie do TODO"]
 };
@@ -65,6 +64,10 @@ function addListItem(value, type) {
 function confirm() {
     trashBin = selected;
     selected.remove();
+    document.getElementById("modal-container").style.display = "none"
+}
+
+function cancel() {
     document.getElementById("modal-container").style.display = "none"
 }
 
