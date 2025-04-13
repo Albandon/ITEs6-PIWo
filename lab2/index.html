@@ -6,10 +6,11 @@
     <body onload="render()">
         <main>
             <input class="todo-text" id="todo-text-value" type="text" placeholder="treść todo..."/>
+            <input class ="todo-text" id="todo-text-type" type="text" placeholder="lista"/>
             <button class="button" onclick="addToList()">Dodaj</button>
         </main>
         <section class = "todo-container">
-            <button class= "button" onclick="undo()">cofnij</button>
+            <button id="undo-btn" class= "button" onclick="undo()">cofnij</button>
             <ul class="todo-list" id="todo-list"></ul>
         </section>
     </body>
@@ -19,6 +20,6 @@
           <button class="button" onclick="confirm()">Tak</button>
           <button class="button" onclick="cancel()">Nie</button>
         </div>
-      </div>
+    </div>
     <script src="script.js"></script>
 </html>

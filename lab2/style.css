@@ -23,12 +23,21 @@
 }
 
 .todo-button {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
     background: none;
     border: solid 1px;
     border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
     padding: 4px 8px;
+}
+
+.todo-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .todo-button.done {
@@ -55,6 +64,7 @@
     border-radius: 2px;
     color: white;
     padding: 10px 25px;
+    cursor: pointer;
 }
 
 .modal {
