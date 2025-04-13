@@ -1,0 +1,67 @@
+.todo-container {
+    margin-top: 5px;
+}
+
+.todo-list {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.del-button {
+    background: none;
+    border: 1px ;
+    font-size: 1rem;
+    color: red;
+    cursor: pointer;
+    padding: 0px 2px;
+}
+
+.todo-text {
+    padding: 10px 25px;
+    width: 30vw;
+}
+
+.todo-button {
+    background: none;
+    border: solid 1px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.todo-button.done {
+    color: gray;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.modal-container {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.button {
+    background-color: #47a386;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+    padding: 10px 25px;
+}
+
+.modal {
+    background-color: white;
+    padding: 30px 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 100%;
+    text-align: center;
+}

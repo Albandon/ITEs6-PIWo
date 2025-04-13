@@ -1,0 +1,24 @@
+<html lang="pl">
+    <head>
+        <title>ToDo</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body onload="render()">
+        <main>
+            <input class="todo-text" id="todo-text-value" type="text" placeholder="treść todo..."/>
+            <button class="button" onclick="addToList()">Dodaj</button>
+        </main>
+        <section class = "todo-container">
+            <button class= "button" onclick="undo()">cofnij</button>
+            <ul class="todo-list" id="todo-list"></ul>
+        </section>
+    </body>
+    <div id="modal-container" class="modal-container">
+        <div class="modal">
+          <p id="modal-text"></p>
+          <button class="button" onclick="confirm()">Tak</button>
+          <button class="button" onclick="cancel()">Nie</button>
+        </div>
+      </div>
+    <script src="script.js"></script>
+</html>
