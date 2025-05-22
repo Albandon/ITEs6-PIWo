@@ -9,7 +9,7 @@ export default function Header() {
                 </div>
                 <div className="logo">
                     <NavLink to="/">
-                        <img src="logo.png" className="logo-image" alt="Logo" />
+                        <img src="/logo.png" className="logo-image" alt="Logo" />
                     </NavLink>
                 </div>
                 <div className="top-register">

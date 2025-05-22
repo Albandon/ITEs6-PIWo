@@ -11,7 +11,7 @@ export const BooksProvider = ({ children }) => {
             description: "Wiedźmin to mistrz miecza...",
             price: 33,
             pages: 246,
-            cover: "Wiedźmin.jpg",
+            cover: "/witcher.jpg",
             coverType: "hard"
         },
         {
@@ -21,7 +21,7 @@ export const BooksProvider = ({ children }) => {
             description: "Opis książki 2",
             price: 25,
             pages: 300,
-            cover: "Wiedźmin.jpg",
+            cover: "/witcher.jpg",
             coverType: "soft"
         },
     ]);
