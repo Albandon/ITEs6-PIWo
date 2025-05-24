@@ -1,18 +1,15 @@
-import { useContext, useState } from "react";
-import { BooksContext } from "../Context/BooksContext";
-import { addDoc, collection } from "firebase/firestore";
+import { useState } from "react";
+import { updateDoc, doc } from "firebase/firestore";
 import { firestore, auth } from "../../config/firebase";
 
-export default function AddBook() {
-    const { booksList, setBooksList } = useContext(BooksContext);
-
-    const [title, setTitle] = useState('');
-    const [author, setAuthor] = useState('');
-    const [description, setDescription] = useState('');
-    const [price, setPrice] = useState('');
-    const [pages, setPages] = useState('');
-    const [image, setImage] = useState('');
-    const [coverType, setCoverType] = useState('');
+export default function EditBook({ book, onClose, onSave }) {
+    const [title, setTitle] = useState(book.title);
+    const [author, setAuthor] = useState(book.author);
+    const [description, setDescription] = useState(book.description);
+    const [price, setPrice] = useState(book.price);
+    const [pages, setPages] = useState(book.pages);
+    const [image, setImage] = useState(book.image);
+    const [coverType, setCoverType] = useState(book.coverType);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,11 +19,9 @@ export default function AddBook() {
             description,
             price,
             pages,
-            // cover: image ? URL.createObjectURL(image) : null,
             cover: '/witcher.jpg',
             coverType,
         };
-        setBooksList((prev) => prev.concat([newBook]))
 
         setTitle("");
         setAuthor("");
@@ -36,22 +31,20 @@ export default function AddBook() {
         setCoverType("");
 
         setImage(null);
-
-        console.log("Dodano książkę:", newBook);
-        console.log(booksList);
-
-        const handleAddBook = async (bookData) => {
+        if (onSave) onSave();
+        onClose();
+        const handleEditBook = async (bookData) => {
             const user = auth.currentUser;
-            await addDoc(collection(firestore, "books"), {
+            await updateDoc(doc(firestore, "books", book.id), {
                 ...bookData,
                 userId: user ? user.uid : null,
             });
         };
-
-        handleAddBook(newBook);
+        handleEditBook(newBook);
     };
-    return (
-        <div className="main-container-add">
+
+return (
+        <div className="main-container-form">
             <h1 className="view-header">Dodawanie ogłoszenia</h1>
             <form className="add-parameters-container" onSubmit={handleSubmit}>
                 <div>
@@ -136,9 +129,10 @@ export default function AddBook() {
                     />
                 </div>
                 <div>
-                    <button className="cart-links" type="submit">Dodaj książkę</button>
+                    <button className="cart-links" type="submit">Zaktualizuj książkę</button>
+                    <button className="cart-links" type="button" onClick={onClose}>Anuluj</button>
                 </div>
             </form>
         </div>
     );
-};
+}

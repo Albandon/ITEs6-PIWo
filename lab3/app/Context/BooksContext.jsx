@@ -1,33 +1,40 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { firestore, auth } from '../../config/firebase';
 
 export const BooksContext = createContext();
 
 export const BooksProvider = ({ children }) => {
-    const [booksList, setBooksList] = useState([
-        {
-            id: 1,
-            title: "Ostatnie życzenie. Wiedźmin. Tom 1",
-            author: "Andrzej Sapkowski",
-            description: "Wiedźmin to mistrz miecza...",
-            price: 33,
-            pages: 246,
-            cover: "/witcher.jpg",
-            coverType: "hard"
-        },
-        {
-            id: 2,
-            title: "Książka 2",
-            author: "Autor 2",
-            description: "Opis książki 2",
-            price: 25,
-            pages: 300,
-            cover: "/witcher.jpg",
-            coverType: "soft"
-        },
-    ]);
+    const [booksList, setBooksList] = useState([]);
+    const [showMine, setShowMine] = useState(false);
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(setUser);
+        return () => unsubscribe();
+    }, []);
+
+    const getBookList = async () => {
+        try {
+            let col = collection(firestore, "books");
+            let q = col;
+            if (showMine && user) {
+                q = query(col, where("userId", "==", user.uid));
+            }
+            const data = await getDocs(q);
+            const filteredData = data.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            setBooksList(filteredData);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    useEffect(() => {
+        getBookList();
+    }, [showMine, user]);
 
     return (
-        <BooksContext.Provider value={{ booksList, setBooksList}}>
+        <BooksContext.Provider value={{ booksList, setBooksList, showMine, setShowMine, user, getBookList }}>
             {children}
         </BooksContext.Provider>
     );

@@ -1,11 +1,29 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
+import { auth } from "../../config/firebase";
 
 export default function Header() {
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(setUser);
+        return () => unsubscribe();
+    }, []);
+
+    const handleLogout = async () => {
+        await auth.signOut();
+        window.location.reload();
+    };
+
     return (
         <header>
             <div className="top">
                 <div className="top-login">
-                    <NavLink className="top-text" to="/Login">Zaloguj się</NavLink>
+                    {user ? (
+                        <button className="top-text" onClick={handleLogout}>Wyloguj</button>
+                    ) : (
+                        <NavLink className="top-text" to="/Login">Zaloguj się</NavLink>
+                    )}
                 </div>
                 <div className="logo">
                     <NavLink to="/">
