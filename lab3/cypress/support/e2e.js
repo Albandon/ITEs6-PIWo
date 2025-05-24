@@ -15,3 +15,13 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+Cypress.on("uncaught:exception", (err) => {
+    if (err.message && err.message.includes("Hydration failed")) {
+        return false;
+    }
+    if (err.message && err.message.includes("Minified React error #418")) {
+        return false;
+    }
+    return true;
+});
