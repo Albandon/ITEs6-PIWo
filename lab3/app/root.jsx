@@ -1,5 +1,4 @@
 import {
-  isRouteErrorResponse,
   Links,
   Meta,
   Outlet,
@@ -12,6 +11,7 @@ import Footer from "./Components/Footer";
 
 import stylesheet from "./app.css?url";
 import { BooksProvider } from "./Context/BooksContext";
+import { CartProvider } from "./Context/CartContext";
 
 export const links = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -34,31 +34,23 @@ export function meta() {
   ];
 }
 
-export function Layout({ children }) {
-  return (
-    <html lang="pl">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <Header/>
-        <main>{children}</main>
-        <Footer/>
-        <ScrollRestoration />
-        <Scripts />
-      </body>
-    </html>
-  );
-}
-
 export default function App() {
   return (
-    <BooksProvider>
-      <Outlet />
-    </BooksProvider>
+    <>
+      <Meta />
+      <Links />
+      <BooksProvider>
+        <CartProvider>
+          <Header />
+          <main>
+            <Outlet />
+          </main>
+          <Footer />
+        </CartProvider>
+      </BooksProvider>
+      <ScrollRestoration />
+      <Scripts />
+    </>
   );
 }
 
